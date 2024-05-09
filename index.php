@@ -1,4 +1,6 @@
 <?php
+
+$movies = [];
 class Production{
     public $title;
     public $language;
@@ -13,9 +15,24 @@ class Production{
 }
 
 $toy_story = new Production('Toy Story','English',8);
+
+$movies[] = $toy_story;
+
 $harry_potter = new Production('Harry Potter','English',6);
+
+$movies[] = $harry_potter;
+
+
 $goal = new Production('Goal','Spanish',7);
+
+$movies[] = $goal;
+
+
 $avatar = new Production('Avatar','English',9);
+
+$movies[] = $avatar;
+
+
 
 ?>
 
@@ -27,6 +44,16 @@ $avatar = new Production('Avatar','English',9);
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                
+
+            </div>
+
+           
+
+        </div>
+    </div>
 </body>
 </html>
