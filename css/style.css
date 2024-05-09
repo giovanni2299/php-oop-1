@@ -6,7 +6,9 @@
 img{
     width: 100%;
 }
+
 .container{
+    padding: 20px;
     max-width: 1024px;
     margin: 0 auto;
 }
@@ -23,6 +25,7 @@ img{
     background-color: salmon;
 }
 .card-header{
+    padding: 10px;
     display: flex;
     justify-content: center;
 }
@@ -31,5 +34,6 @@ img{
     display: block;
 }
 .card-body{
+    padding: 10px;
     text-align: center;
 }
