@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+img{
+    width: 100%;
+}
 .container{
     max-width: 1024px;
     margin: 0 auto;
@@ -12,12 +14,21 @@
 .row{
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
 }
 .col-4{
-    width: calc(3 * 100% / 12);
+    width: calc(3 * 100% / 12 - 10px);
 }
 .card{
     background-color: salmon;
+}
+.card-header{
+    display: flex;
+    justify-content: center;
+}
+.locandina{
+    width: 200px;
+    display: block;
 }
 .card-body{
     text-align: center;
