@@ -1,45 +1,35 @@
 <?php
 
-require_once __DIR__ . '/Movie.php';
-require_once __DIR__ . '/SerieTv.php';
+require_once __DIR__ . '/models/Movie.php';
+require_once __DIR__ . '/models/SerieTv.php';
 
 
-$movies = [];
-class Production
-{
-    public $title;
-    public $language;
-    public $vote;
-    public $image;
-
-    function __construct($_title, $_language, $_vote, $_image)
-    {
-        $this->title = $_title;
-        $this->language = $_language;
-        $this->vote = $_vote;
-        $this->image = $_image;
-    }
-}
-
-$toy_story = new Production('Toy Story', 'English', 8,'https://image.tmdb.org/t/p/w342//uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg');
-
-$movies[] = $toy_story;
-
-$harry_potter = new Production('Harry Potter', 'English', 6,'https://image.tmdb.org/t/p/w342//wuMc08IPKEatf9rnMNXvIDxqP4W.jpg');
-
-$movies[] = $harry_potter;
 
 
-$goal = new Production('Goal', 'Spanish', 7,'https://image.tmdb.org/t/p/w342//9YZhJGoIbJtrjDYbENGhR6f6SZE.jpg');
+$movies = [
+    new Movie('Toy Story', 'English', 8,'https://image.tmdb.org/t/p/w342//uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg', '1M €','90 minuti'),
+    new Movie('Harry Potter', 'English', 6,'https://image.tmdb.org/t/p/w342//wuMc08IPKEatf9rnMNXvIDxqP4W.jpg', '10M €','100 minuti'),
+    new Movie('Goal', 'Spanish', 7,'https://image.tmdb.org/t/p/w342//9YZhJGoIbJtrjDYbENGhR6f6SZE.jpg', '1M €', '95 minuti'),
+    new Movie('Avatar', 'English', 9,'https://image.tmdb.org/t/p/w342//kyeqWdyUXW608qlYkRqosgbbJyK.jpg', '2M €', '120 minuti'),
+];
 
-$movies[] = $goal;
+$serisTv = [
+    new SerieTv('Lost', 'English', 8,'https://image.tmdb.org/t/p/w342//sgxVVoe2I84pR3AVdfyc1OxvdAJ.jpg', '1 season'),
+    new SerieTv('Casa de Papel', 'Spanish', 7,'https://image.tmdb.org/t/p/w342//reEMJA1uzscCbkpeRJeTT2bjqUp.jpg', '2 season '),
+    new SerieTv('Breaking Bad', 'English', 8,'https://image.tmdb.org/t/p/w342//ApitDfnYDwFNOPfyVuhW5ElWzhe.jpg', '4 season'),
+    new SerieTv('Tom and Gerry', 'English', 9,'https://image.tmdb.org/t/p/w342//8XZI9QZ7Pm3fVkigWJPbrXCMzjq.jpg', '3 season'),
 
 
-$avatar = new Production('Avatar', 'English', 9,'https://image.tmdb.org/t/p/w342//kyeqWdyUXW608qlYkRqosgbbJyK.jpg');
+];
 
-$movies[] = $avatar;
 
-$movies = new Movie('1.00000.000','90 minuti');
+// foreach($movies as $obj) {
+//     echo $obj->sommario();
+//     echo $obj->getType();
+// }
+
+
+
 
 ?>
 
@@ -66,7 +56,26 @@ $movies = new Movie('1.00000.000','90 minuti');
                             <h2><?php echo $movie->title;?></h2>
                             <p><?php echo $movie->language;?></p>
                             <p><?php echo $movie->vote;?></p>
+                            <p><?php echo $movie->profits?></p>
+                            <p><?php echo $movie->time?></p>
 
+                        </div>
+                    </div>
+                    
+                </div>
+            <?php } ?>
+
+            <?php foreach ($serisTv as $serietv) { ?>
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <img class="locandina" src="<?php echo $serietv->image;?>" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h2><?php echo $serietv->title;?></h2>
+                            <p><?php echo $serietv->language;?></p>
+                            <p><?php echo $serietv->vote;?></p>
+                            <p><?php echo $serietv->season?></p>
                         </div>
                     </div>
                     
