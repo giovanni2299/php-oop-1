@@ -1,5 +1,9 @@
 <?php
 
+require_once __DIR__ . '/Movie.php';
+require_once __DIR__ . '/SerieTv.php';
+
+
 $movies = [];
 class Production
 {
@@ -35,7 +39,7 @@ $avatar = new Production('Avatar', 'English', 9,'https://image.tmdb.org/t/p/w342
 
 $movies[] = $avatar;
 
-
+$movies = new Movie('1.00000.000','90 minuti');
 
 ?>
 
